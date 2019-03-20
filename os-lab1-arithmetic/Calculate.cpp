@@ -1,4 +1,4 @@
-#include "stdafx.h"
+п»ї#include "stdafx.h"
 #include "Calculate.h"
 
 using namespace std;
@@ -54,23 +54,23 @@ string postfix_note(string exp){
 			}
 
 			if (opStack.IsEmpty()) {
-				throw "не правильно расставлены скобки";
+				throw "РЅРµ РїСЂР°РІРёР»СЊРЅРѕ СЂР°СЃСЃС‚Р°РІР»РµРЅС‹ СЃРєРѕР±РєРё";
 			}
 
 			opStack.Pop();
 			continue;
 		}
-		throw "недопустимый символ";
+		throw "РЅРµРґРѕРїСѓСЃС‚РёРјС‹Р№ СЃРёРјРІРѕР»";
 	}
 
 	while (!opStack.IsEmpty()){
 		if (opStack.Peek() == '(')
-			throw "не правильно расставлены скобки";
+			throw "РЅРµ РїСЂР°РІРёР»СЊРЅРѕ СЂР°СЃСЃС‚Р°РІР»РµРЅС‹ СЃРєРѕР±РєРё";
 		result << opStack.Pop() << ' ';
 	}
 
 	if (result.rdbuf()->in_avail())
-		throw "нет данных";
+		throw "РЅРµС‚ РґР°РЅРЅС‹С…";
 
 	return result.str();
 }
@@ -78,7 +78,7 @@ string postfix_note(string exp){
 double Calculate(string exp)
 {
 	if (exp.empty())
-		throw "нет данных";
+		throw "РЅРµС‚ РґР°РЅРЅС‹С…";
 
 	char buff;
 	float leftOperand;
@@ -108,11 +108,11 @@ double Calculate(string exp)
 		}
 
 		if (trackStack.IsEmpty())
-			throw "нет совпадения с числом операндов";
+			throw "РЅРµС‚ СЃРѕРІРїР°РґРµРЅРёВ¤ СЃ С‡РёСЃР»РѕРј РѕРїРµСЂР°РЅРґРѕРІ";
 
 		rightOperand = trackStack.Pop();
 		if (trackStack.IsEmpty())
-			throw "нет совпадения с числом операндов";
+			throw "РЅРµС‚ СЃРѕРІРїР°РґРµРЅРёВ¤ СЃ С‡РёСЃР»РѕРј РѕРїРµСЂР°РЅРґРѕРІ";
 
 		leftOperand = trackStack.Pop();
 
@@ -127,7 +127,7 @@ double Calculate(string exp)
 
 	float result = trackStack.Pop();
 	if (!trackStack.IsEmpty())
-		throw "Стек переполнен";
+		throw "вЂ”С‚РµРє РїРµСЂРµРїРѕР»РЅРµРЅ";
 
 	return result;
 }

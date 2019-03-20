@@ -1,4 +1,4 @@
-// os-lab1-arithmetic.cpp : Defines the entry point for the console application.
+ï»¿// os-lab1-arithmetic.cpp : Defines the entry point for the console application.
 //
 
 #include "stdafx.h"
@@ -14,7 +14,7 @@ int main()
 	float result;
 	string input, notation;
 
-	cout << "Ââåäèòå âûðàæåíèå â îáùåì âèäå" << endl;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð²Ñ‹Ñ€Ð°Ð¶ÐµÐ½Ð¸Ðµ Ð² Ð¾Ð±Ñ‰ÐµÐ¼ Ð²Ð¸Ð´Ðµ" << endl;
 	cout << "input=";
 	getline(cin, input);
 
@@ -23,14 +23,14 @@ int main()
 		result = Calculate(notation);
 	}
 	catch (...){
-		cout << "Îøèáêà âûðàæåíèÿ" << endl;
+		cout << "ÐžÑˆÐ¸Ð±ÐºÐ° Ð²Ñ‹Ñ€Ð°Ð¶ÐµÐ½Ð¸Ñ" << endl;
 		system("PAUSE");
 		return 1;
 	}
 
-	cout << "Ïîëüñêàÿ ôîðìà: ";
+	cout << "ÐŸÐ¾Ð»ÑŒÑÐºÐ°Ñ Ñ„Ð¾Ñ€Ð¼Ð°: ";
 	cout << notation;
 	cout << endl;
-	cout << "Ðåçóëüòàò: " << result << endl;
+	cout << "Ð ÐµÐ·ÑƒÐ»ÑŒÑ‚Ð°Ñ‚: " << result << endl;
 	system("PAUSE");
 }
